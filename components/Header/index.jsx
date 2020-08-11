@@ -1,15 +1,20 @@
+import PropTypes from 'prop-types'
 import Link from 'next/link'
-import Logo from 'assets/SanYsidro-logo.svg'
 import { Head } from './header.styles'
 
-const Header = () => (
+const Header = ({ logo, logoText }) => (
 	<Head>
 		<Link href="/">
 			<a>
-				<img src={Logo} alt="San Ysidro SDA Church logo" />
+				<img src={logo} alt={logoText} />
 			</a>
 		</Link>
 	</Head>
 )
+
+Header.propTypes = {
+	logo: PropTypes.string.isRequired,
+	logoText: PropTypes.string.isRequired,
+}
 
 export default Header

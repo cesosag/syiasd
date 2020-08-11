@@ -7,9 +7,13 @@ export const colors = {
 	},
 }
 
+export const gradients = {
+	hero: `linear-gradient(to bottom, ${colors.neutral.dark} 9%, rgba(255, 255, 255, 0.53) 38%, rgba(255, 255, 255, 0.87) 72%, ${colors.neutral.light} 93%)`,
+}
+
 export const typography = {
-	primaryFont: 'OpenSans, sans-serif',
-	secondaryFont: 'MiriadPro, serif',
+	primaryFont: 'Montserrat, sans-serif',
+	secondaryFont: '\'Bebas Neue\', serif',
 	typeScale: {
 		h1: '1.8rem',
 		h2: '1.6rem',
@@ -24,5 +28,6 @@ export const typography = {
 }
 
 export const vars = {
-	maxWidth: 1200,
+	maxWidth: 1280,
+	wrapperMaxWidth: 1024,
 }

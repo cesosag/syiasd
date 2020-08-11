@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from 'polished'
 import { colors, typography, vars } from './theme'
@@ -18,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: ${typography.typeScale.paragraph};
 		height: 100%;
 		margin: 0 auto;
+		max-width: ${vars.maxWidth}px;
 		min-height: 100vh;
 		overscroll-behavior: none;
 	}
@@ -71,13 +73,12 @@ export const GlobalStyle = createGlobalStyle`
 			'header'
 			'main'
 			'footer';
-		justify-content: center;
 	}
 `
 
 export const Wrapper = styled.div`
 	margin: 0 auto;
-	max-width: ${vars.maxWidth}px;
+	max-width: ${vars.wrapperMaxWidth}px;
 	padding: 1rem;
 	width: 100vw;
 `

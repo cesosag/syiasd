@@ -2,12 +2,12 @@
 import { GlobalStyle, dynamicElement } from 'styles'
 import { Header, Footer } from 'components'
 
-const Main = dynamicElement('main', true)
+const Main = dynamicElement('main')
 
 const App = ({ Component, pageProps }) => (
 	<>
 		<GlobalStyle />
-		<Header />
+		<Header logo="/images/SanYsidro-logo.svg" logoText="San Ysidro SDA Church Logo" />
 		<Main>
 			<Component {...pageProps} />
 		</Main>
