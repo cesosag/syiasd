@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { Welcome } from 'components'
+import { youtube } from 'services'
 
 const Home = ({ welcome }) => (
 	<>
@@ -8,12 +9,18 @@ const Home = ({ welcome }) => (
 )
 
 Home.propTypes = {
-	welcome: PropTypes.shape(Welcome.PropTypes).isRequired,
+	welcome: PropTypes.shape(Welcome.propTypes).isRequired,
 }
 
 export default Home
 
 export async function getStaticProps() {
+	const videos = await youtube.get('/playlistItems', {
+		params: {
+			playlistId: 'PLOqMc4wUtGMv8sPyHiW1CiJDsGdXFzRRk',
+		},
+	})
+
 	return {
 		props: {
 			welcome: {
@@ -22,6 +29,7 @@ export async function getStaticProps() {
 					title: 'San Ysidro',
 					subtitle: 'Tu comunidad de fe',
 				},
+				videos: videos.data.items,
 			},
 		},
 	}

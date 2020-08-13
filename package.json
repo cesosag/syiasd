@@ -14,18 +14,20 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "next": "^9.5.1",
     "polished": "^3.6.5",
-		"prop-types": "^15.7.2",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.4.0",
     "babel-plugin-styled-components": "^1.11.1",
     "eslint": "^7.6.0",
-    "eslint-config-cs": "^0.0.2",
+    "eslint-config-cs": "^0.0.3",
     "url-loader": "^4.1.0"
   }
 }
