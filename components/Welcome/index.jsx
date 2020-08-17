@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
 import { Wrapper } from 'styles'
-import { Hero, YTVideo as Video } from 'components'
+import { Hero, Videos } from 'components'
 import { Section } from './welcome.styles'
 
 const Welcome = ({ background, hero: { title, subtitle }, videos }) => (
 	<Section background={background}>
 		<Wrapper>
 			<Hero title={title} subtitle={subtitle} />
-			<Video videoID={videos[0].snippet.resourceId.videoId} />
+			<Videos videos={videos} />
 		</Wrapper>
 	</Section>
 )
@@ -15,9 +15,11 @@ const Welcome = ({ background, hero: { title, subtitle }, videos }) => (
 Welcome.propTypes = {
 	background: PropTypes.string,
 	hero: PropTypes.shape(Hero?.propTypes).isRequired,
+	videos: PropTypes.arrayOf(PropTypes.shape({})),
 }
 Welcome.defaultProps = {
 	background: null,
+	videos: null,
 }
 
 export default Welcome

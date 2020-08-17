@@ -5,6 +5,9 @@ export const colors = {
 		semiLight: '#ababab',
 		light: '#fff',
 	},
+	blue: {
+		light: '#49c1c7',
+	},
 }
 
 export const gradients = {

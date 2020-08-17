@@ -18,6 +18,7 @@ export async function getStaticProps() {
 	const videos = await youtube.get('/playlistItems', {
 		params: {
 			playlistId: 'PLOqMc4wUtGMv8sPyHiW1CiJDsGdXFzRRk',
+			maxResults: 3,
 		},
 	})
 
