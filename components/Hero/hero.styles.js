@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 import { theme } from 'styles'
 
+export const Title = styled.h1`
+	font-size: 82px;
+`
+
+export const Text = styled.p`
+	font-size: 42px;
+	text-transform: uppercase;
+`
+
+export const CTAs = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 1.5em;
+	width: 100%;
+`
+
 export const Container = styled.div`
 	color: ${theme.colors.neutral.light};
 	display: grid;
@@ -8,16 +24,7 @@ export const Container = styled.div`
 	padding: 10rem;
 	place-items: center;
 
-	h1, p {
+	${Title}, ${Text} {
 		margin: 0;
-		text-transform: uppercase;
-	}
-
-	h1 {
-		font-size: 82px;
-	}
-
-	p {
-		font-size: 42px;
 	}
 `

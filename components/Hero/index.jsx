@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import { Button } from 'components'
-import { Container } from './hero.styles'
+import { Container, CTAs, Text, Title } from './hero.styles'
 
 const Hero = ({ title, subtitle }) => (
 	<Container>
-		<h1>{title}</h1>
-		<p>{subtitle}</p>
-		<Button kind="secondary">Ver mensajes</Button>
-		<Button>Donar</Button>
+		<Title>{title}</Title>
+		<Text>{subtitle}</Text>
+		<CTAs>
+			<Button kind="secondary">Ver mensajes</Button>
+			<Button>Donar</Button>
+		</CTAs>
 	</Container>
 )
 
