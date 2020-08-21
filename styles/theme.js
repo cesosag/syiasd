@@ -7,6 +7,7 @@ export const colors = {
 	},
 	blue: {
 		light: '#49c1c7',
+		dark: '#19a0a0',
 	},
 }
 
@@ -32,5 +33,6 @@ export const typography = {
 
 export const vars = {
 	maxWidth: 1280,
+	transitionTime: '0.3s',
 	wrapperMaxWidth: 1024,
 }
