@@ -1,13 +1,23 @@
 import styled from 'styled-components'
 import { theme } from 'styles'
 
+const { colors, vars: { maxPhoneBreakpoint } } = theme
+
 export const Title = styled.h1`
-	font-size: 82px;
+	font-size: 48px;
+
+	@media (min-width: ${maxPhoneBreakpoint}px) {
+		font-size: 82px;
+	}
 `
 
 export const Text = styled.p`
-	font-size: 42px;
+	font-size: 24px;
 	text-transform: uppercase;
+
+	@media (min-width: ${maxPhoneBreakpoint}px) {
+		font-size: 42px;
+	}
 `
 
 export const CTAs = styled.div`
@@ -18,11 +28,15 @@ export const CTAs = styled.div`
 `
 
 export const Container = styled.div`
-	color: ${theme.colors.neutral.light};
+	color: ${colors.neutral.light};
 	display: grid;
 	margin: 6rem 0;
-	padding: 10rem;
+	padding: 1rem;
 	place-items: center;
+
+	@media (min-width: ${maxPhoneBreakpoint}px) {
+		padding: 10rem;
+	}
 
 	${Title}, ${Text} {
 		margin: 0;
