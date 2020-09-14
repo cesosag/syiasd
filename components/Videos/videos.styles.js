@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.h3`
-	color: ${colors.blue.light};
+	color: ${colors.neutral.light};
 	font-family: ${typography.primaryFont};
 `
 

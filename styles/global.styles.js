@@ -13,8 +13,8 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	body {
-		background-color: ${colors.neutral.semiLight};
-		color: ${colors.neutral.dark};
+		background-color: ${colors.neutral.dark};
+		color: ${colors.neutral.light};
 		font-family: ${typography.primaryFont};
 		font-size: ${typography.typeScale.paragraph};
 		height: 100%;

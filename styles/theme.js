@@ -1,18 +1,17 @@
 export const colors = {
 	neutral: {
-		dark: '#000',
-		semiDark: '#151515',
-		semiLight: '#ababab',
-		light: '#fff',
+		dark: '#1b0939',
+		light: '#e2e0e5',
 	},
-	blue: {
-		light: '#49c1c7',
-		dark: '#19a0a0',
-	},
+	blue: '#59c6b8',
+	violet: '#36008d',
+	yellow: '#f6d247',
+	pink: '#f4b6c1',
+	orange: '#fe5e54',
 }
 
 export const gradients = {
-	hero: `linear-gradient(to bottom, ${colors.neutral.dark} 9%, rgba(255, 255, 255, 0.53) 38%, rgba(255, 255, 255, 0.87) 72%, ${colors.neutral.light} 93%)`,
+	violet: `linear-gradient(to bottom, rgba(40, 1, 49, 0) 9%, rgba(40, 1, 49, 0.53) 38%, rgba(54, 0, 141, 0.87) 72%, ${colors.violet} 93%)`,
 }
 
 export const typography = {

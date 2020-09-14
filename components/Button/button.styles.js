@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { theme } from 'styles'
+import { darken } from 'polished'
 
 const { colors, vars } = theme
 
@@ -8,12 +9,12 @@ const button = css`
 		let styles
 		if (kind === 'primary') {
 			styles = css`
-				background-color: ${colors.blue.light};
-				border: 1px solid ${colors.blue.light};
+				background-color: ${colors.orange};
+				border: 1px solid ${colors.orange};
 
 				&:hover {
-					background-color: ${colors.blue.dark};
-					border-color: ${colors.blue.dark};
+					background-color: ${darken(0.1, colors.orange)};
+					border-color: ${darken(0.1, colors.orange)};
 				}
 			`
 		} else {
@@ -23,7 +24,7 @@ const button = css`
 
 				&:hover {
 					background-color: ${colors.neutral.light};
-					color: ${colors.neutral.semiDark}
+					color: ${colors.neutral.dark}
 				}
 			`
 		}
