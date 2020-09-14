@@ -7,7 +7,11 @@ const Main = dynamicElement('main')
 const App = ({ Component, pageProps }) => (
 	<>
 		<GlobalStyle />
-		<Header logo="/images/SanYsidro-logo.svg" logoText="San Ysidro SDA Church Logo" />
+		<Header
+			logo="/images/SanYsidro-logo.svg"
+			logoMobile="/images/SanYsidro-logo-short.svg"
+			logoText="San Ysidro SDA Church Logo"
+		/>
 		<Main>
 			<Component {...pageProps} />
 		</Main>

@@ -34,4 +34,5 @@ export const vars = {
 	maxWidth: 1280,
 	transitionTime: '0.3s',
 	wrapperMaxWidth: 1024,
+	maxPhoneBreakpoint: 600,
 }
