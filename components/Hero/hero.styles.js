@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { theme } from 'styles'
 
-const { colors, mediaQueries: { tabletPortraitUp } } = theme
+const { colors, mediaQueries: { phoneOnly, tabletPortraitUp } } = theme
 
 export const Title = styled.h1`
 	font-size: 48px;
@@ -23,12 +23,20 @@ export const Text = styled.p`
 `
 
 export const CTAs = styled.div`
+	display: flex;
 	margin-top: 2.5rem;
 	text-align: center;
-	width: 100%;
+	width: 70%;
+
+	${phoneOnly} {
+		flex-direction: column;
+
+		button:first-of-type {
+			margin-bottom: 1.25rem;
+		}
+	}
 
 	${tabletPortraitUp} {
-		display: flex;
 		justify-content: space-evenly;
 		margin-top: 1.5em;
 	}

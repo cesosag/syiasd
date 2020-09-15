@@ -7,7 +7,7 @@ const Hero = ({ title, subtitle }) => (
 		<Title>{title}</Title>
 		<Text>{subtitle}</Text>
 		<CTAs>
-			<Button kind="secondary">Ver mensajes</Button>
+			<Button kind="secondary">Ver temas</Button>
 			<Button>Donar</Button>
 		</CTAs>
 	</Container>
