@@ -39,6 +39,7 @@ export const CTAs = styled.div`
 	${tabletPortraitUp} {
 		justify-content: space-evenly;
 		margin-top: 1.5em;
+		max-width: 550px;
 	}
 `
 

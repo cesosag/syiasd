@@ -5,7 +5,7 @@ import { Wrapper, Title, CTAs } from './videos.styles'
 
 const Videos = ({ videos }) => (
 	<>
-		<Title>Ver sermones anteriores</Title>
+		<Title id="videos">Ver sermones anteriores</Title>
 		<Wrapper>
 			{videos.map(({ snippet: { resourceId: { videoId } } }) => <Video key={videoId} videoID={videoId} />)}
 		</Wrapper>

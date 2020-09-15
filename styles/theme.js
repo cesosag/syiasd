@@ -38,6 +38,7 @@ export const vars = {
 	desktopUpperBoundary: 1800,
 }
 
+// Based on https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 export const mediaQueries = {
 	phoneOnly: `@media (max-width: ${vars.phoneUpperBoundary - 1}px)`,
 	tabletPortraitUp: `@media (min-width: ${vars.phoneUpperBoundary}px)`,

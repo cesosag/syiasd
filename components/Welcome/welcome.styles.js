@@ -6,9 +6,10 @@ const { colors, gradients, mediaQueries: { phoneOnly } } = theme
 export const Section = styled.section`
 	${({ background }) => (background ? `background-image: ${gradients.violet}, url(${background});` : null)}
 	background-color: ${colors.violet};
+	background-repeat: no-repeat;
+	background-size: contain;
 
 	${phoneOnly} {
-		background-repeat: no-repeat;
 		background-size: 100% 41%, 200% auto;
 	}
 `

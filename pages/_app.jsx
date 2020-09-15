@@ -15,7 +15,7 @@ const App = ({ Component, pageProps }) => (
 		<Main>
 			<Component {...pageProps} />
 		</Main>
-		<Footer />
+		{/* <Footer /> */}
 	</>
 )
 
