@@ -31,8 +31,17 @@ export const typography = {
 }
 
 export const vars = {
-	maxWidth: 1280,
 	transitionTime: '0.3s',
-	wrapperMaxWidth: 1024,
-	maxPhoneBreakpoint: 600,
+	phoneUpperBoundary: 600,
+	tabletPortraitUpperBoundary: 900,
+	tabletLandscapeUpperBoundary: 1200,
+	desktopUpperBoundary: 1800,
+}
+
+export const mediaQueries = {
+	phoneOnly: `@media (max-width: ${vars.phoneUpperBoundary - 1}px)`,
+	tabletPortraitUp: `@media (min-width: ${vars.phoneUpperBoundary}px)`,
+	tabletLandscapeUp: `@media (min-width: ${vars.tabletPortraitUpperBoundary}px)`,
+	desktopUp: `@media (min-width: ${vars.tabletLandscapeUpperBoundary}px)`,
+	largeDesktop: `@media (min-width: ${vars.desktopUpperBoundary}px)`,
 }

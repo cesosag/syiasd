@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: ${typography.typeScale.paragraph};
 		height: 100%;
 		margin: 0 auto;
-		max-width: ${vars.maxWidth}px;
+		max-width: ${vars.desktopUpperBoundary}px;
 		min-height: 100vh;
 		overscroll-behavior: none;
 	}
@@ -79,7 +79,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Wrapper = styled.div`
 	margin: 0 auto;
-	max-width: ${vars.wrapperMaxWidth}px;
-	padding: 1rem;
+	max-width: ${vars.desktopUpperBoundary}px;
+	padding: 1.2rem;
 	width: 100vw;
 `

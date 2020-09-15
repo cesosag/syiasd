@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { theme } from 'styles'
 import { Head } from './header.styles'
 
-const { vars: { maxPhoneBreakpoint } } = theme
+const { vars: { phoneUpperBoundary } } = theme
 
 const Header = ({ logo, logoMobile, logoText }) => (
 	<Head>
 		<Link href="/">
 			<a>
 				<picture>
-					<source media={`(min-width: ${maxPhoneBreakpoint}px)`} srcSet={logo} />
+					<source media={`(min-width: ${phoneUpperBoundary}px)`} srcSet={logo} />
 					<img src={logoMobile} alt={logoText} />
 				</picture>
 			</a>
