@@ -38,6 +38,14 @@ export const vars = {
 	desktopUpperBoundary: 1800,
 }
 
+export const zIndex = {
+	modal: 900,
+	overlay: 800,
+	dropdown: 700,
+	header: 600,
+	footer: 500,
+}
+
 // Based on https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
 export const mediaQueries = {
 	phoneOnly: `@media (max-width: ${vars.phoneUpperBoundary - 1}px)`,

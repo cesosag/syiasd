@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { GlobalStyle, dynamicElement } from 'styles'
-import { Header, Footer } from 'components'
+import { Header/* , Footer */ } from 'components'
 
 const Main = dynamicElement('main')
 
