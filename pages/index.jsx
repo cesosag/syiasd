@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
-import { Welcome } from 'components'
+import { Welcome, Give } from 'components'
 import { youtube } from 'services'
 
-const Home = ({ welcome }) => (
+const Home = ({ welcome, give }) => (
 	<>
 		<Welcome {...welcome} />
+		<Give {...give} />
 	</>
 )
 
@@ -32,6 +33,13 @@ export async function getStaticProps() {
 				},
 				latestVideo: videos.data.items.shift().snippet,
 				videos: videos.data.items.map((video) => video.snippet),
+			},
+			give: {
+				background: '/images/give-bg.jpg',
+				title: 'De lo recibido de tu mano te damos.',
+				subtitle: '1ª de Crónicas 29:14',
+				// eslint-disable-next-line max-len
+				text: 'Con tus diezmos y ofrendas podemos llevar el mensaje del Evangelio a muchos más lugares y además apoyar a nuestra comunidad.',
 			},
 		},
 	}
