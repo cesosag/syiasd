@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { dynamicElement, Wrapper, theme } from 'styles'
 
-const { colors, vars, zIndex } = theme
+const { colors, vars, zIndex, mediaQueries: { desktopUp } } = theme
 
 export const Head = styled(dynamicElement('header', true))`
 	/* mix-blend-mode: darken; */
@@ -13,6 +13,9 @@ export const Head = styled(dynamicElement('header', true))`
 	width: 100%;
 	z-index: ${zIndex.header};
 
+	${desktopUp} {
+		padding: 1rem 5rem;
+	}
 
 	${Wrapper} {
 		border-bottom: 1px solid ${colors.neutral.light};

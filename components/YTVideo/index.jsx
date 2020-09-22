@@ -1,5 +1,7 @@
-/* eslint-disable no-undef */
-import { useEffect, useRef, useState } from 'react'
+/* eslint-disable jsx-a11y/iframe-has-title */
+/* eslint-disable max-len */
+
+import { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Video } from './ytvideo.styles'
 
@@ -25,7 +27,6 @@ const YTVideo = ({ videoID, onReady, onStateChange }) => {
 				player.current = new window.YT.Player(videoID, {
 					videoId: videoID,
 					playerVars: {
-						enablejsapi: 1,
 						origin: window.location.origin,
 						modestbranding: 1,
 					},
@@ -43,7 +44,7 @@ const YTVideo = ({ videoID, onReady, onStateChange }) => {
 
 	return (
 		<Video>
-			<div id={videoID} />
+			<iframe id={videoID} src={`https://www.youtube.com/embed/${videoID}?enablejsapi=1`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
 		</Video>
 	)
 }

@@ -7,9 +7,9 @@ export const Section = styled.section`
 	${({ background }) => (background ? `background-image: ${gradients.violet}, url(${background});` : null)}
 	background-color: ${colors.violet};
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 100% 45%, contain;
 
 	${phoneOnly} {
-		background-size: 100% 41%, 200% auto;
+		background-size: 100% 45%, 200% auto;
 	}
 `

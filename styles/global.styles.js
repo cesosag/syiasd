@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from 'polished'
-import { colors, typography, vars } from './theme'
+import { colors, typography, vars, mediaQueries } from './theme'
 
 export const GlobalStyle = createGlobalStyle`
 	${normalize()}
@@ -12,11 +12,16 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 	}
 
+	a {
+		color: ${colors.orange};
+	}
+
 	body {
 		background-color: ${colors.neutral.dark};
 		color: ${colors.neutral.light};
 		font-family: ${typography.primaryFont};
 		font-size: ${typography.typeScale.paragraph};
+		font-weight: 300;
 		height: 100%;
 		margin: 0 auto;
 		max-width: ${vars.desktopUpperBoundary}px;
@@ -68,6 +73,12 @@ export const GlobalStyle = createGlobalStyle`
 		grid-area: main;
 	}
 
+	p {
+		font-size: 16px;
+		line-height: 1.63;
+		margin: 32px 0 0;
+	}
+
 	#__next {
 		display: grid;
 		grid-template-areas:
@@ -82,4 +93,8 @@ export const Wrapper = styled.div`
 	max-width: ${vars.desktopUpperBoundary}px;
 	padding: 1.2rem;
 	width: 100vw;
+
+	${mediaQueries.desktopUp} {
+		padding: 5rem;
+	}
 `

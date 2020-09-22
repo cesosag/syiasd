@@ -51,7 +51,7 @@ export const Container = styled.div`
 	place-items: center;
 
 	${tabletPortraitUp} {
-		padding: 10rem;
+		padding: 6rem;
 	}
 
 	${Title}, ${Text} {

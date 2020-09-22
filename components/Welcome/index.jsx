@@ -3,11 +3,11 @@ import { Wrapper } from 'styles'
 import { Hero, Videos } from 'components'
 import { Section } from './welcome.styles'
 
-const Welcome = ({ background, hero: { title, subtitle }, videos }) => (
+const Welcome = ({ background, hero: { title, subtitle }, videos, latestVideo }) => (
 	<Section background={background}>
 		<Wrapper>
 			<Hero title={title} subtitle={subtitle} />
-			<Videos videos={videos} />
+			<Videos latestVideo={latestVideo} videos={videos} />
 		</Wrapper>
 	</Section>
 )

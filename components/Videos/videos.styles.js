@@ -1,17 +1,35 @@
 import styled from 'styled-components'
 import { theme } from 'styles'
 
-const { colors, typography } = theme
+const { colors, typography, mediaQueries: { phoneOnly, tabletPortraitUp } } = theme
 
 export const Wrapper = styled.div`
 	display: grid;
 	grid-gap: 1em;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+	grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+
+	${phoneOnly} {
+		padding: 0 1.2rem;
+		width: 280%;
+	}
 `
 
-export const Title = styled.h3`
+export const Container = styled.div`
+	${phoneOnly} {
+		margin: 0 -1.2rem;
+		overflow: scroll;
+	}
+`
+
+export const Title = styled.h2`
 	color: ${colors.neutral.light};
 	font-family: ${typography.primaryFont};
+	font-size: 18px;
+	margin: 24px 0;
+
+	${tabletPortraitUp} {
+		font-size: 24px;
+	}
 `
 
 export const CTAs = styled.div`

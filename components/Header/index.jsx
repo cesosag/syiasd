@@ -17,7 +17,7 @@ const Header = ({ logo, logoMobile, logoText }) => {
 
 		scheduledAnimationFrame = true
 		window.requestAnimationFrame(() => {
-			if (lastScrollY >= 200) setContrast(true)
+			if (lastScrollY >= 120) setContrast(true)
 			else setContrast(false)
 		})
 	}
