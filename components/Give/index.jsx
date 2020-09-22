@@ -4,13 +4,13 @@ import { Button } from 'components'
 import { texts } from 'services'
 import { Section, Title, Subtitle, Text } from './give.styles'
 
-const Give = ({ background, title, subtitle, text }) => (
+const Give = ({ background, title, subtitle, text, giveURL }) => (
 	<Section background={background}>
 		<Wrapper>
 			<Title>{title}</Title>
 			<Subtitle>{subtitle}</Subtitle>
 			<Text>{text}</Text>
-			<Button href="https://adventistgiving.org/#/org/ANPMOV/envelope/start" target="_blank">{texts.BUTTONS.GIVE}</Button>
+			<Button href={giveURL} target="_blank">{texts.BUTTONS.GIVE}</Button>
 		</Wrapper>
 	</Section>
 )
@@ -20,6 +20,7 @@ Give.propTypes = {
 	title: PropTypes.string.isRequired,
 	subtitle: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
+	giveURL: PropTypes.string.isRequired,
 }
 Give.defaultProps = {
 	background: null,

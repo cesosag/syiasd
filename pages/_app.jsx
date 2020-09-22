@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { GlobalStyle, dynamicElement } from 'styles'
+// import { config } from 'services'
 import { Header/* , Footer */ } from 'components'
 
 const Main = dynamicElement('main')
@@ -15,7 +16,7 @@ const App = ({ Component, pageProps }) => (
 		<Main>
 			<Component {...pageProps} />
 		</Main>
-		{/* <Footer /> */}
+		{/* <Footer socialLinks={config.urls} /> */}
 	</>
 )
 

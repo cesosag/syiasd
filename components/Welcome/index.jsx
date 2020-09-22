@@ -3,11 +3,11 @@ import { Wrapper } from 'styles'
 import { Hero, Videos } from 'components'
 import { Section } from './welcome.styles'
 
-const Welcome = ({ background, hero: { title, subtitle }, videos, latestVideo }) => (
+const Welcome = ({ background, hero, videos, latestVideo, channelURL }) => (
 	<Section background={background}>
 		<Wrapper>
-			<Hero title={title} subtitle={subtitle} />
-			<Videos latestVideo={latestVideo} videos={videos} />
+			<Hero {...hero} />
+			<Videos latestVideo={latestVideo} videos={videos} channelURL={channelURL} />
 		</Wrapper>
 	</Section>
 )
@@ -15,7 +15,9 @@ const Welcome = ({ background, hero: { title, subtitle }, videos, latestVideo })
 Welcome.propTypes = {
 	background: PropTypes.string,
 	hero: PropTypes.shape(Hero?.propTypes).isRequired,
+	latestVideo: PropTypes.shape({}).isRequired,
 	videos: PropTypes.arrayOf(PropTypes.shape({})),
+	channelURL: PropTypes.string.isRequired,
 }
 Welcome.defaultProps = {
 	background: null,

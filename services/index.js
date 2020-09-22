@@ -1,4 +1,5 @@
 import * as texts from './texts'
 
-export { default as youtube } from './youtube'
 export { texts }
+export { default as youtube } from './youtube'
+export { default as config } from './config'

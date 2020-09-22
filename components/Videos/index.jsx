@@ -3,7 +3,7 @@ import { Button, VideoItem } from 'components'
 import { texts } from 'services'
 import { Container, Wrapper, Title, CTAs } from './videos.styles'
 
-const Videos = ({ latestVideo, videos }) => (
+const Videos = ({ latestVideo, videos, channelURL }) => (
 	<>
 		<Title id="videos">{texts.HOME.VIDEOS.LATEST_TRANSMITIONS}</Title>
 		<VideoItem video={latestVideo} type="featured" />
@@ -14,7 +14,7 @@ const Videos = ({ latestVideo, videos }) => (
 		</Container>
 		<CTAs>
 			<Button
-				href={`https://www.youtube.com/channel/${videos[0]?.channelId}/`}
+				href={channelURL}
 				target="_blank"
 				rel="noreferrer"
 				size="small"
@@ -28,6 +28,7 @@ const Videos = ({ latestVideo, videos }) => (
 Videos.propTypes = {
 	latestVideo: PropTypes.shape({}).isRequired,
 	videos: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+	channelURL: PropTypes.string.isRequired,
 }
 
 export default Videos
