@@ -25,7 +25,7 @@ export async function getStaticProps() {
 	return {
 		props: {
 			welcome: {
-				background: '/images/hero.jpg',
+				background: '/images/hero-bg.jpg',
 				hero: {
 					title: 'San Ysidro',
 					subtitle: 'Tu comunidad de fe',

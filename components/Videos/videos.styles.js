@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
 	${phoneOnly} {
-		margin: 0 -1.2rem;
+		margin: 2rem -1.2rem 0;
 		overflow: scroll;
 	}
 `
