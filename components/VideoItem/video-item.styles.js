@@ -2,7 +2,7 @@
 import styled, { css } from 'styled-components'
 import { theme } from 'styles'
 
-const { mediaQueries: { tabletPortraitUp } } = theme
+const { colors, mediaQueries: { tabletPortraitUp } } = theme
 
 export const VideoWrapper = styled.div`
 	${({ type }) => (type === 'featured' ? css`
@@ -39,6 +39,7 @@ export const VideoDate = styled.span`
 `
 
 export const VideoLink = styled.a`
+	color: ${colors.orange};
 	display: inline-block;
 	font-size: 12px;
 	text-decoration: none;

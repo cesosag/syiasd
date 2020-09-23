@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types'
-import { Welcome, Give } from 'components'
+import { Welcome, Give, Contact } from 'components'
 import { config, youtube } from 'services'
 
-const Home = ({ welcome, give }) => (
+const Home = ({ welcome, give, contact }) => (
 	<>
 		<Welcome {...welcome} />
 		<Give {...give} />
+		<Contact {...contact} />
 	</>
 )
 
 Home.propTypes = {
 	welcome: PropTypes.shape(Welcome.propTypes).isRequired,
+	give: PropTypes.shape(Give.propTypes).isRequired,
+	contact: PropTypes.shape(Contact.propTypes).isRequired,
 }
 
 export default Home

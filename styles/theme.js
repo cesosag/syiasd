@@ -1,6 +1,7 @@
 export const colors = {
 	neutral: {
 		dark: '#1b0939',
+		semiLight: '#d1cfcf',
 		light: '#efefef',
 	},
 	blue: '#59c6b8',

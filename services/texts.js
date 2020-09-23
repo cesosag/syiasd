@@ -9,4 +9,12 @@ export const HOME = {
 	VIDEOS: {
 		LATEST_TRANSMITIONS: 'Últimas transmisiones',
 	},
+	CONTACT: {
+		NAME: 'Nombre',
+		LAST_NAME: 'Apellido',
+		E_MAIL: 'Correo electrónico',
+		MESSAGE: 'Escribe tu mensaje aquí',
+		PHONE: 'Teléfono',
+		SUBMIT: 'Enviar',
+	},
 }

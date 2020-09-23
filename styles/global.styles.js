@@ -13,7 +13,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	a {
-		color: ${colors.orange};
+		color: ${colors.neutral.dark};
+		cursor: pointer;
+		transition: color ${vars.transitionTime};
+
+		&:hover {
+			color: ${colors.orange};
+		}
 	}
 
 	body {
@@ -70,6 +76,33 @@ export const GlobalStyle = createGlobalStyle`
 		vertical-align: middle;
 	}
 
+	input[type="email"],
+	input[type="text"],
+	textarea {
+		appearance: none;
+		border: 1px solid ${colors.neutral.semiLight};
+		background: ${colors.neutral.semiLight};
+		color: ${colors.violet};
+		margin-top: 0.5em;
+		padding: 0.5em 0.25em;
+		transition: border-color ${vars.transitionTime};
+		width: 100%;
+
+		&:focus {
+			border-color: ${colors.violet};
+			outline: 1px double ${colors.violet};
+		}
+
+		&:valid {
+			border-color: ${colors.blue};
+		}
+	}
+
+	label {
+		display: block;
+		margin-top: 1em;
+	}
+
 	main {
 		grid-area: main;
 	}
@@ -78,6 +111,11 @@ export const GlobalStyle = createGlobalStyle`
 		font-size: 16px;
 		line-height: 1.63;
 		margin: 32px 0 0;
+	}
+
+	textarea {
+		height: 6ch;
+		resize: none;
 	}
 
 	#__next {
