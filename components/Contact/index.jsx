@@ -57,7 +57,7 @@ const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 					</ContactInfoGroup>
 					<ContactInfoGroup>
 						<p>{`${texts.HOME.CONTACT.PHONE}:`}</p>
-						<p>{phone}</p>
+						<p><a href={`tel:${phone}`}>{phone}</a></p>
 					</ContactInfoGroup>
 					<ContactInfoGroup>
 						<p>{`${texts.HOME.CONTACT.E_MAIL}:`}</p>
