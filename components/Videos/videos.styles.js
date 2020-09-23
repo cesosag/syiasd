@@ -17,7 +17,12 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
 	${phoneOnly} {
 		margin: 2rem -1.2rem 0;
-		overflow: scroll;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+
+		& > div > div {
+			scroll-snap-align: center;
+		}
 	}
 `
 
