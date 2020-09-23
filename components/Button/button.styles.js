@@ -15,6 +15,7 @@ const button = css`
 				&:hover {
 					background-color: ${darken(0.1, colors.orange)};
 					border-color: ${darken(0.1, colors.orange)};
+					color: ${colors.neutral.semiLight};
 				}
 			`
 		} else {
