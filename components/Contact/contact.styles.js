@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { theme, Wrapper } from 'styles'
 import { SocialLinks } from 'components'
 
-const { colors, typography, mediaQueries: { tabletPortraitUp } } = theme
+const { colors, typography, mediaQueries: { tabletPortraitUp, tabletLandscapeUp } } = theme
 
 export const Section = styled.section`
 	background: ${colors.neutral.light};
@@ -21,10 +21,18 @@ export const Section = styled.section`
 			align-items: self-start;
 			display: grid;
 			grid-template-areas:
-				'title title title title title title'
-				'form form form map map map'
-				'contact-info contact-info contact-info contact-info social social';
+				'title title'
+				'form map'
+				'contact-info contact-info'
+				'social social';
 			grid-gap: 4rem 2rem;
+		}
+
+		${tabletLandscapeUp} {
+			grid-template-areas:
+				'title title'
+				'form map'
+				'contact-info social';
 		}
 	}
 `
@@ -90,7 +98,7 @@ export const Social = styled.div`
 	${tabletPortraitUp} {
 		${SocialLinks} {
 			ul {
-				justify-content: space-between;
+				justify-content: space-evenly;
 			}
 		}
 	}

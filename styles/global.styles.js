@@ -32,7 +32,6 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0 auto;
 		max-width: ${vars.desktopUpperBoundary}px;
 		min-height: 100vh;
-		overscroll-behavior: none;
 		-webkit-font-smoothing: antialiased;
 	}
 
