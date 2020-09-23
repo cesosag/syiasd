@@ -18,3 +18,7 @@ export const HOME = {
 		SUBMIT: 'Enviar',
 	},
 }
+
+export const FOOTER = {
+	COPYRIGHT: `Copyright © ${new Date().getFullYear()}`,
+}

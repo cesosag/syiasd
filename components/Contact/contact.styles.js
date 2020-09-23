@@ -25,7 +25,7 @@ export const Section = styled.section`
 				'form map'
 				'contact-info contact-info'
 				'social social';
-			grid-gap: 4rem 2rem;
+			grid-gap: 4rem 6rem;
 		}
 
 		${tabletLandscapeUp} {
