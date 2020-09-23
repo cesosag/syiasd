@@ -23,7 +23,7 @@ const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 		<Section>
 			<Wrapper>
 				<Title>{title}</Title>
-				<ContactForm onSubmit={handleSubmit}>
+				{/* <ContactForm onSubmit={handleSubmit}>
 					<Text>{text}</Text>
 					<label htmlFor="name">
 						<span>{`${texts.HOME.CONTACT.NAME}*`}</span>
@@ -42,7 +42,7 @@ const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 						<textarea id="message" value={message} onChange={({ target: { value } }) => setMessage(value)} required />
 					</label>
 					<Button type="submit" size="small">{texts.HOME.CONTACT.SUBMIT}</Button>
-				</ContactForm>
+				</ContactForm> */}
 				<MapWrapper>
 					<ContactInfoGroup>
 						<p>{address.street}</p>
