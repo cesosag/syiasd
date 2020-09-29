@@ -34,7 +34,7 @@ export async function getStaticProps() {
 	return {
 		props: {
 			welcome: {
-				background: '/images/hero-bg.jpg',
+				background: '/images/hero-bg.webp',
 				hero: {
 					title: 'San Ysidro',
 					subtitle: 'Tu comunidad de fe',
@@ -45,7 +45,7 @@ export async function getStaticProps() {
 				channelURL: config.urls.youtube,
 			},
 			give: {
-				background: '/images/give-bg.jpg',
+				background: '/images/give-bg.webp',
 				title: 'De lo recibido de tu mano te damos.',
 				subtitle: '1ª de Crónicas 29:14',
 				// eslint-disable-next-line max-len
