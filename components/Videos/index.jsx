@@ -15,8 +15,6 @@ const Videos = ({ latestVideo, videos, channelURL }) => (
 		<CTAs>
 			<Button
 				href={channelURL}
-				target="_blank"
-				rel="noreferrer"
 				size="small"
 			>
 				{texts.BUTTONS.VIEW_CHANNEL}

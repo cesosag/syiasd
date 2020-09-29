@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import PropTypes from 'prop-types'
 import { YTVideo as Video } from 'components'
 import { texts } from 'services'
@@ -17,12 +18,12 @@ const VideoItem = ({ video, hasDate, hasLink, type }) => {
 
 	return (
 		<VideoWrapper type={type}>
-			<Video videoID={videoId} />
+			<Video videoID={videoId} title={title} />
 			<VideoInfo>
 				{hasDate && date && <VideoDate>{`${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`}</VideoDate>}
 				<VideoTitle>{title}</VideoTitle>
 				<p>{description}</p>
-				{hasLink && <VideoLink href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank">{texts.BUTTONS.VIEW_MORE}</VideoLink>}
+				{hasLink && <VideoLink href={`https://www.youtube.com/watch?v=${videoId}`} target="_blank" rel="noopener noreferrer">{texts.BUTTONS.VIEW_MORE}</VideoLink>}
 			</VideoInfo>
 		</VideoWrapper>
 	)

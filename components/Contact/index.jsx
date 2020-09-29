@@ -48,7 +48,7 @@ const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 						<p>{address.street}</p>
 						<p>{`${address.city}, ${address.state} ${address.zipCode}`}</p>
 					</ContactInfoGroup>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3362.7376880837232!2d-117.05749958447835!3d32.55984530233346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d949387324753b%3A0x58811bb6be5dca77!2sSan%20Ysidro%20Spanish%20Seventh-day%20Adventist%20Church!5e0!3m2!1sen!2sus!4v1600811580014!5m2!1sen!2sus" frameBorder="0" allowFullScreen="" aria-hidden="false" tabIndex="0" />
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3362.7376880837232!2d-117.05749958447835!3d32.55984530233346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d949387324753b%3A0x58811bb6be5dca77!2sSan%20Ysidro%20Spanish%20Seventh-day%20Adventist%20Church!5e0!3m2!1sen!2sus!4v1600811580014!5m2!1sen!2sus" frameBorder="0" allowFullScreen="" aria-hidden="false" tabIndex="0" title="San Ysidro SDA location" />
 				</MapWrapper>
 				<ContactInfo>
 					<ContactInfoGroup>
@@ -61,7 +61,7 @@ const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 					</ContactInfoGroup>
 					<ContactInfoGroup>
 						<p>{`${texts.HOME.CONTACT.E_MAIL}:`}</p>
-						<p><a href={`mailto:${email}`} target="_blank" rel="noreferrer">{email}</a></p>
+						<p><a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer">{email}</a></p>
 					</ContactInfoGroup>
 				</ContactInfo>
 				<Social>

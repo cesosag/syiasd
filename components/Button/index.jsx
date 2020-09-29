@@ -12,7 +12,7 @@ const Button = ({ children, kind, size, href, ...props }) => {
 		const isExternal = isExternalURL(href)
 		if (isExternal) {
 			element = (
-				<StyledLink href={href} kind={kind} size={size} {...props}>
+				<StyledLink href={href} kind={kind} size={size} target="_blank" rel="noopener noreferer" {...props}>
 					{children}
 				</StyledLink>
 			)

@@ -10,7 +10,7 @@ const Give = ({ background, title, subtitle, text, giveURL }) => (
 			<Title>{title}</Title>
 			<Subtitle>{subtitle}</Subtitle>
 			<Text>{text}</Text>
-			<Button href={giveURL} target="_blank">{texts.BUTTONS.GIVE}</Button>
+			<Button href={giveURL}>{texts.BUTTONS.GIVE}</Button>
 		</Wrapper>
 	</Section>
 )

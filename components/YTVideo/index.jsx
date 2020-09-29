@@ -18,7 +18,7 @@ const loadIframeAPI = () => {
 	}
 }
 
-const YTVideo = ({ videoID, onReady, onStateChange }) => {
+const YTVideo = ({ videoID, title, onReady, onStateChange }) => {
 	const player = useRef()
 	useEffect(() => {
 		loadIframeAPI()
@@ -44,13 +44,14 @@ const YTVideo = ({ videoID, onReady, onStateChange }) => {
 
 	return (
 		<Video>
-			<iframe id={videoID} src={`https://www.youtube.com/embed/${videoID}?enablejsapi=1&modestbranding=1`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+			<iframe id={videoID} src={`https://www.youtube.com/embed/${videoID}?enablejsapi=1&modestbranding=1`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title={title} />
 		</Video>
 	)
 }
 
 YTVideo.propTypes = {
 	videoID: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
 	onReady: PropTypes.func,
 	onStateChange: PropTypes.func,
 }

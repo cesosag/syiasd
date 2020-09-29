@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types'
+import Head from 'next/head'
 import { Welcome, Give, Contact } from 'components'
 import { config, youtube } from 'services'
 
 const Home = ({ welcome, give, contact }) => (
 	<>
+		<Head>
+			<title>{`${welcome.hero.title} - ${welcome.hero.subtitle}`}</title>
+			<meta name="Description" content={`${welcome.hero.title} - ${welcome.hero.subtitle}`} />
+		</Head>
 		<Welcome {...welcome} />
 		<Give {...give} />
 		<Contact {...contact} />
