@@ -1,4 +1,4 @@
-const config = {
+const conf = {
 	urls: {
 		adventistGiging: 'https://adventistgiving.org/#/org/ANPMOV/envelope/start',
 		instagram: 'https://www.instagram.com/san_ysidro_spanish_sda/',
@@ -7,4 +7,4 @@ const config = {
 	},
 }
 
-export default config
+export default conf

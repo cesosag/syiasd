@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { Welcome, Give, Contact } from 'components'
-import { config, youtube } from 'services'
+import { conf, youtube } from 'services'
 
 const Home = ({ welcome, give, contact }) => (
 	<>
@@ -38,11 +38,11 @@ export async function getStaticProps() {
 				hero: {
 					title: 'San Ysidro',
 					subtitle: 'Tu comunidad de fe',
-					giveURL: config.urls.adventistGiging,
+					giveURL: conf.urls.adventistGiging,
 				},
 				latestVideo: videos.data.items.shift().snippet,
 				videos: videos.data.items.map((video) => video.snippet),
-				channelURL: config.urls.youtube,
+				channelURL: conf.urls.youtube,
 			},
 			give: {
 				background: '/images/give-bg.webp',
@@ -50,7 +50,7 @@ export async function getStaticProps() {
 				subtitle: '1ª de Crónicas 29:14',
 				// eslint-disable-next-line max-len
 				text: 'Con tus diezmos y ofrendas podemos llevar el mensaje del Evangelio a muchos más lugares y además apoyar a nuestra comunidad.',
-				giveURL: config.urls.adventistGiging,
+				giveURL: conf.urls.adventistGiging,
 			},
 			contact: {
 				title: 'Contáctanos',
@@ -67,8 +67,9 @@ export async function getStaticProps() {
 				},
 				phone: '(909) 714 3352',
 				email: 'sanysidrosda2020@gmail.com',
-				socialLinks: config.urls,
+				socialLinks: conf.urls,
 			},
 		},
+		revalidate: 1,
 	}
 }
