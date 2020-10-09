@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { theme, Wrapper } from 'styles'
 import { SocialLinks } from 'components'
 
-const { colors, typography, mediaQueries: { tabletPortraitUp, tabletLandscapeUp } } = theme
+const { colors, typography, mediaQueries: { tabletPortraitUp, tabletLandscapeUp }, vars } = theme
 
 export const Section = styled.section`
 	background: ${colors.neutral.light};
@@ -50,9 +50,37 @@ export const Text = styled.p`
 
 export const ContactForm = styled.form`
 	grid-area: form;
+	position: relative;
 
 	[type="submit"] {
 		margin-top: 1em;
+	}
+`
+
+export const FormOverlay = styled.div`
+	background-color: ${colors.neutral.light}cc;
+	bottom: 0;
+	display: grid;
+	left: 0;
+  place-items: center;
+	opacity: ${({ open }) => (open ? '1' : '0')};
+	pointer-events: ${({ open }) => (open ? 'all' : 'none')};
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: opacity ${vars.transitionTime};
+
+	svg {
+		width: 64px;
+	}
+`
+
+export const FormOverlayContent = styled.div`
+	padding: 2em;
+	text-align: center;
+
+	p {
+		margin: 0 0 2em;
 	}
 `
 
