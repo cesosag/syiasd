@@ -16,6 +16,9 @@ export const HOME = {
 		MESSAGE: 'Escribe tu mensaje aquí',
 		PHONE: 'Teléfono',
 		SUBMIT: 'Enviar',
+		SUCCESS: ', hemos enviado tu mensaje. Alguien se pondrá en contacto contigo muy pronto.',
+		ERROR: 'Algo ha sucedido y no hemos podido enviar tu mensaje. Puedes intetntarlo de nuevo.',
+		GO_BACK: 'Regresar',
 	},
 }
 

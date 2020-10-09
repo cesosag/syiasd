@@ -66,7 +66,7 @@ export async function getStaticProps() {
 					hours: '10:00 AM - 12:00 AM',
 				},
 				phone: '(909) 714 3352',
-				email: 'sanysidrosda2020@gmail.com',
+				email: 'contacto@sanysidrosda.com',
 				socialLinks: conf.urls,
 			},
 		},
