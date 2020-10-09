@@ -20,24 +20,20 @@ export const Section = styled.section`
 		${tabletPortraitUp} {
 			align-items: self-start;
 			display: grid;
-			/* grid-template-areas:
+			grid-template-areas:
 				'title title'
 				'form map'
 				'contact-info contact-info'
-				'social social'; */
-			grid-template-areas:
-				'title title'
-				'map map'
-				'contact-info social';
+				'social social';
 			grid-gap: 4rem 6rem;
 		}
 
-		/* ${tabletLandscapeUp} {
+		${tabletLandscapeUp} {
 			grid-template-areas:
 				'title title'
 				'form map'
 				'contact-info social';
-		} */
+		}
 	}
 `
 
