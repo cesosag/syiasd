@@ -3,20 +3,54 @@
 /* eslint-disable max-len */
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { texts } from 'services'
+import { cms, texts } from 'services'
+import { mutations } from 'queries'
 import { Wrapper } from 'styles'
-import { Button, SocialLinks } from 'components'
-import { Section, Title, Text, ContactForm, MapWrapper, ContactInfo, ContactInfoGroup, Social } from './contact.styles'
+import { Button, SocialLinks, Spinner } from 'components'
+import { Section, Title, Text, ContactForm, FormOverlay, FormOverlayContent, MapWrapper, ContactInfo, ContactInfoGroup, Social } from './contact.styles'
 
 const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 	const [name, setName] = useState('')
 	const [lastName, setLastName] = useState('')
 	const [eMail, setEMail] = useState('')
 	const [message, setMessage] = useState('')
+	const [sending, setSending] = useState(false)
+	const [openOverlay, setOpenOverlay] = useState(false)
+	const [error, setError] = useState(false)
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
-		console.log(e)
+		setSending(true)
+		setOpenOverlay(true)
+		try {
+			const { data } = await cms.query({
+				query: mutations.CONTACT,
+				variables: {
+					name,
+					lastName,
+					email: eMail,
+					message,
+				},
+			})
+			console.log(data)
+		} catch (err) {
+			// eslint-disable-next-line no-console
+			console.error(err)
+			setError(true)
+		}
+		setSending(false)
+	}
+
+	const clearForm = () => {
+		if (!error) {
+			setName('')
+			setLastName('')
+			setEMail('')
+			setMessage('')
+		} else {
+			setError(false)
+		}
+		setOpenOverlay(false)
 	}
 
 	return (
@@ -42,6 +76,16 @@ const Contact = ({ title, text, address, open, phone, email, socialLinks }) => {
 						<textarea id="message" value={message} onChange={({ target: { value } }) => setMessage(value)} required />
 					</label>
 					<Button type="submit" size="small">{texts.HOME.CONTACT.SUBMIT}</Button>
+					<FormOverlay open={openOverlay}>
+						{sending && <Spinner />}
+						{!sending && (
+							<FormOverlayContent>
+								{!error && <p>{`${name}${texts.HOME.CONTACT.SUCCESS}`}</p>}
+								{error && <p>{texts.HOME.CONTACT.ERROR}</p>}
+								<Button size="small" onClick={clearForm}>{texts.HOME.CONTACT.GO_BACK}</Button>
+							</FormOverlayContent>
+						)}
+					</FormOverlay>
 				</ContactForm>
 				<MapWrapper>
 					<ContactInfoGroup>
