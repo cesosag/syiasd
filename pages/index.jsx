@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { Welcome, Give, Contact } from 'components'
-import { conf, youtube } from 'services'
+import { cms, youtube } from 'services'
+import { queries } from 'queries'
 
 const Home = ({ welcome, give, contact }) => (
 	<>
@@ -24,50 +25,46 @@ Home.propTypes = {
 export default Home
 
 export async function getStaticProps() {
+	const { data: { data: { siteConfiguration, hero, give, contactDatum } } } = await cms.query({
+		query: queries.HOME,
+	})
+
 	const videos = await youtube.get('/playlistItems', {
 		params: {
-			playlistId: 'PLpH9JcquIu4PQU3C63G5BTUfpQXXlHCXo',
+			playlistId: siteConfiguration?.youtube?.mainPlaylist,
 			maxResults: 4,
 		},
 	})
 
 	return {
 		props: {
+			config: siteConfiguration,
 			welcome: {
-				background: '/images/hero-bg.webp',
+				background: hero?.background?.url,
 				hero: {
-					title: 'San Ysidro',
-					subtitle: 'Tu comunidad de fe',
-					giveURL: conf.urls.adventistGiging,
+					title: hero?.title,
+					subtitle: hero?.subtitle,
+					giveURL: siteConfiguration.URLs.adventistGiving,
 				},
 				latestVideo: videos.data.items.shift().snippet,
 				videos: videos.data.items.map((video) => video.snippet),
-				channelURL: conf.urls.youtube,
+				channelURL: siteConfiguration.URLs.youtube,
 			},
 			give: {
-				background: '/images/give-bg.webp',
-				title: 'De lo recibido de tu mano te damos.',
-				subtitle: '1ª de Crónicas 29:14',
-				// eslint-disable-next-line max-len
-				text: 'Con tus diezmos y ofrendas podemos llevar el mensaje del Evangelio a muchos más lugares y además apoyar a nuestra comunidad.',
-				giveURL: conf.urls.adventistGiging,
+				background: give?.background?.url,
+				title: give?.title,
+				subtitle: give?.subtitle,
+				text: give?.text,
+				giveURL: siteConfiguration.URLs.adventistGiving,
 			},
 			contact: {
-				title: 'Contáctanos',
-				text: '¿En qué podemos ayudarte?',
-				address: {
-					street: '521 Blackshaw Ln',
-					city: 'San Ysidro',
-					state: 'CA',
-					zipCode: '92173',
-				},
-				open: {
-					days: 'Sábados',
-					hours: '10:00 AM - 12:00 AM',
-				},
-				phone: '(909) 714 3352',
-				email: 'contacto@sanysidrosda.com',
-				socialLinks: conf.urls,
+				title: contactDatum?.title,
+				text: contactDatum?.text,
+				address: contactDatum?.address,
+				open: contactDatum?.open_hours,
+				phone: contactDatum?.phone,
+				email: contactDatum?.email,
+				socialLinks: siteConfiguration.URLs,
 			},
 		},
 		revalidate: 1,

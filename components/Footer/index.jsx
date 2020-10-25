@@ -6,20 +6,28 @@ import { FooterContainer, Copyright } from './footer.styles'
 
 const Footer = ({ logo, logoText, socialLinks }) => (
 	<FooterContainer>
-		<Link href="/">
-			<a className="logo">
-				<img src={logo} alt={logoText} />
-			</a>
-		</Link>
-		<SocialLinks className="social-links" {...socialLinks} />
+		{logo && (
+			<Link href="/">
+				<a className="logo">
+					<img src={logo} alt={logoText} />
+				</a>
+			</Link>
+		)}
+		{socialLinks && <SocialLinks className="social-links" {...socialLinks} />}
 		<Copyright>{texts.FOOTER.COPYRIGHT}</Copyright>
 	</FooterContainer>
 )
 
 Footer.propTypes = {
-	logo: PropTypes.string.isRequired,
-	logoText: PropTypes.string.isRequired,
-	socialLinks: PropTypes.shape({}).isRequired,
+	logo: PropTypes.string,
+	logoText: PropTypes.string,
+	socialLinks: PropTypes.shape({}),
+}
+
+Footer.defaultProps = {
+	logo: null,
+	logoText: null,
+	socialLinks: {},
 }
 
 export default Footer

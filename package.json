@@ -1,6 +1,6 @@
 {
   "name": "syiasd",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "San Ysidro Spanish SDA church website",
   "main": "index.js",
   "repository": "git@github.com:cesosag/syiasd.git",
@@ -17,13 +17,14 @@
     "axios": "^0.19.2",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.11.0",
-    "next": "^9.5.4",
+    "next": "^9.5.5",
     "polished": "^3.6.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
     "react-is": "^16.13.1",
+    "showdown": "^1.9.1",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
