@@ -29,22 +29,30 @@ const Header = ({ logo, logoMobile, logoText }) => {
 
 	return (
 		<Head contrast={contrast.toString()}>
-			<Link href="/">
-				<a>
-					<picture>
-						<source media={`(min-width: ${phoneUpperBoundary}px)`} srcSet={logo} />
-						<img src={logoMobile} alt={logoText} />
-					</picture>
-				</a>
-			</Link>
+			{(logo || logoMobile) && (
+				<Link href="/">
+					<a>
+						<picture>
+							<source media={`(min-width: ${phoneUpperBoundary}px)`} srcSet={logo} />
+							<img src={logoMobile} alt={logoText} />
+						</picture>
+					</a>
+				</Link>
+			)}
 		</Head>
 	)
 }
 
 Header.propTypes = {
-	logo: PropTypes.string.isRequired,
-	logoMobile: PropTypes.string.isRequired,
-	logoText: PropTypes.string.isRequired,
+	logo: PropTypes.string,
+	logoMobile: PropTypes.string,
+	logoText: PropTypes.string,
+}
+
+Header.defaultProps = {
+	logo: null,
+	logoMobile: null,
+	logoText: null,
 }
 
 export default Header

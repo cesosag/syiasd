@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { GlobalStyle, dynamicElement } from 'styles'
-import { conf } from 'services'
 import { Header, Footer } from 'components'
 
 const Main = dynamicElement('main')
@@ -9,17 +8,17 @@ const App = ({ Component, pageProps }) => (
 	<>
 		<GlobalStyle />
 		<Header
-			logo="/images/SanYsidro-logo.svg"
-			logoMobile="/images/SanYsidro-logo-short.svg"
-			logoText="San Ysidro SDA Church Logo"
+			logo={pageProps?.config?.logos?.logo?.url}
+			logoMobile={pageProps?.config?.logos?.logoShort?.url}
+			logoText={pageProps?.config?.logos?.logo?.alternativeText}
 		/>
 		<Main>
 			<Component {...pageProps} />
 		</Main>
 		<Footer
-			logo="/images/SanYsidro-logo.svg"
-			logoText="San Ysidro SDA Church Logo"
-			socialLinks={conf.urls}
+			logo={pageProps?.config?.logos?.logo?.url}
+			logoText={pageProps?.config?.logos?.logo?.alternativeText}
+			socialLinks={pageProps?.config?.URLs}
 		/>
 	</>
 )
