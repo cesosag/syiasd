@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import { GlobalStyle, dynamicElement } from 'styles'
-import { Header, Footer } from 'components'
+import { Header, Footer, GoogleAnalytics } from 'components'
 
 const Main = dynamicElement('main')
 
 const App = ({ Component, pageProps }) => (
 	<>
+		<GoogleAnalytics measurementID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
 		<GlobalStyle />
 		<Header
 			logo={pageProps?.config?.logos?.logo?.url}

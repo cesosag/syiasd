@@ -41,6 +41,7 @@ export default class Document extends NextDocument {
 					<meta name="theme-color" content="#1b0939" />
 					<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 					<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+					<script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
 				</Head>
 				<body>
 					<Main />
