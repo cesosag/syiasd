@@ -1,7 +1,9 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable max-len */
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import { analytics } from 'services'
 
 export default class Document extends NextDocument {
 	static async getInitialProps(ctx) {
@@ -41,7 +43,18 @@ export default class Document extends NextDocument {
 					<meta name="theme-color" content="#1b0939" />
 					<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 					<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
-					<script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+					<script async src={`https://www.googletagmanager.com/gtag/js?id=${analytics.MEASUREMENT_ID}`} />
+					<script dangerouslySetInnerHTML={{
+						__html: `
+							window.dataLayer = window.dataLayer || [];
+							function gtag(){dataLayer.push(arguments);}
+							gtag('js', new Date());
+							gtag('config', '${analytics.MEASUREMENT_ID}', {
+								page_path: window.location.pathname,
+							});
+						`,
+					}}
+					/>
 				</Head>
 				<body>
 					<Main />
