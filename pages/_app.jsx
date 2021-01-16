@@ -2,14 +2,25 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { analytics } from 'services'
-import { GlobalStyle, dynamicElement } from 'styles'
+import { GlobalStyle, dynamicElement, theme } from 'styles'
 import { Header, Footer } from 'components'
+import pkg from '../package.json'
 
 const Main = dynamicElement('main')
 
 const App = ({ Component, pageProps }) => {
 	const router = useRouter()
 
+	useEffect(() => {
+		// eslint-disable-next-line no-console
+		console.log(
+			`%c${pkg.description}, version: ${pkg.version}`,
+			`background: ${theme.colors.neutral.dark};
+			color: ${theme.colors.neutral.light};
+			font-size: x-large;
+			padding: 0.5em;`,
+		)
+	}, [])
 	useEffect(() => {
 		analytics.pageview(window.location.pathname)
 		const handleRouteChange = (url) => {
