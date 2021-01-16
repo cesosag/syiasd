@@ -1,6 +1,6 @@
 {
   "name": "syiasd",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "San Ysidro Spanish SDA church website",
   "main": "index.js",
   "repository": "git@github.com:cesosag/syiasd.git",
