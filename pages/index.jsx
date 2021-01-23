@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { Welcome, Give, Contact } from 'components'
 import { cms, youtube } from 'services'
+import { cloudinaryAutoFormat } from 'utils'
 import { queries } from 'queries'
 
 const Home = ({ welcome, give, contact }) => (
@@ -40,7 +41,7 @@ export async function getStaticProps() {
 		props: {
 			config: siteConfiguration,
 			welcome: {
-				background: hero?.background?.url,
+				background: cloudinaryAutoFormat(hero?.background?.url),
 				hero: {
 					title: hero?.title,
 					subtitle: hero?.subtitle,
@@ -51,7 +52,7 @@ export async function getStaticProps() {
 				channelURL: siteConfiguration.URLs.youtube,
 			},
 			give: {
-				background: give?.background?.url,
+				background: cloudinaryAutoFormat(give?.background?.url),
 				title: give?.title,
 				subtitle: give?.subtitle,
 				text: give?.text,
