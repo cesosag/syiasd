@@ -106,3 +106,7 @@ dist
 
 # OS
 .DS_Store
+
+# Lighthouse audits
+.lhci
+.lighthouseci

@@ -1,6 +1,3 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable max-len */
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import { analytics } from 'services'
@@ -44,7 +41,10 @@ export default class Document extends NextDocument {
 					<meta name="theme-color" content={theme.colors.neutral.dark} />
 					<link rel="preconnect" href="https://res.cloudinary.com/" />
 					<link rel="preconnect" href="https://fonts.gstatic.com/" />
-					<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+					<link rel="preconnect" href="https://www.youtube.com/" />
+					<link rel="preconnect" href="https://www.googletagmanager.com/" />
+					<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" as="style" />
+					<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" media="all" />
 					<script async src={`https://www.googletagmanager.com/gtag/js?id=${analytics.MEASUREMENT_ID}`} />
 					<script dangerouslySetInnerHTML={{
 						__html: `

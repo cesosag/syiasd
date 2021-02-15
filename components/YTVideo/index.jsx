@@ -13,6 +13,7 @@ const loadIframeAPI = () => {
 		const tag = document.createElement('script')
 		tag.src = 'https://www.youtube.com/iframe_api'
 		tag.id = SCRIPT_ID
+		tag.defer = true
 		const firstScriptElement = document.querySelector('script')
 		firstScriptElement.parentNode.insertBefore(tag, firstScriptElement)
 	}
