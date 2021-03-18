@@ -1,6 +1,6 @@
 {
   "name": "syiasd",
-  "version": "1.5.3",
+  "version": "1.4.0",
   "description": "San Ysidro Spanish SDA church website",
   "main": "index.js",
   "repository": "git@github.com:cesosag/syiasd.git",
@@ -12,18 +12,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --fix",
-		"lh:clean": "rm -rf .lhci && rm -rf .lighthouseci && yarn build",
-		"prelh": "yarn lh:clean",
-		"prelh:desktop": "yarn lh:clean",
-		"lh": "lhci autorun",
-		"lh:desktop": "lhci autorun --config=./lighthouserc.desktop.js"
+    "lh:clean": "rm -rf .lhci && rm -rf .lighthouseci && yarn build",
+    "prelh": "yarn lh:clean",
+    "prelh:desktop": "yarn lh:clean",
+    "lh": "lhci autorun",
+    "lh:desktop": "lhci autorun --config=./lighthouserc.desktop.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
-    "next": "^10.0.6",
-    "polished": "^4.1.0",
+    "next": "^10.0.9",
+    "polished": "^4.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -33,11 +33,13 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
+    "@csjs/eslint-config-cs": "^0.0.2",
     "@lhci/cli": "^0.7.0",
     "@svgr/webpack": "^5.5.0",
     "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^7.20.0",
-    "eslint-config-cs": "^0.0.3",
+    "eslint": "^7.22.0",
     "url-loader": "^4.1.1"
   }
 }

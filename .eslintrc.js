@@ -4,7 +4,7 @@ module.exports = {
 		node: true,
 		es6: true,
 	},
-	extends: ['eslint-config-cs'],
+	extends: ['@csjs/eslint-config-cs'],
 	rules: {
 		'import/no-unresolved': [2, { ignore: ['assets', 'components', 'styles', 'services', 'utils', 'queries'] }],
 		'jsx-a11y/anchor-is-valid': 0,
@@ -15,4 +15,5 @@ module.exports = {
 	globals: {
 		React: 'writable',
 	},
+	parser: '@babel/eslint-parser',
 }
