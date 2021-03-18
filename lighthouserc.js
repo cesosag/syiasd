@@ -8,7 +8,10 @@ module.exports = {
 					maxNumericValue: 1000,
 				}],
 				'largest-contentful-paint': ['warn', { minScore: 0.8 }],
-				'first-meaningful-paint': ['warn', { minScore: 0.8 }],
+				'first-meaningful-paint': ['warn', {
+					// minScore: 0.8,
+					maxNumericValue: 1000,
+				}],
 				'speed-index': ['warn', { minScore: 0.8 }],
 				'first-cpu-idle': ['warn', { minScore: 0.8 }],
 				interactive: ['warn', { minScore: 0.8 }],
@@ -17,7 +20,7 @@ module.exports = {
 			},
 		},
 		collect: {
-			numberOfRuns: 10,
+			numberOfRuns: 3,
 			settings: {
 				onlyAudits: [
 					'first-contentful-paint',
@@ -39,7 +42,6 @@ module.exports = {
 			startServerCommand: 'yarn start',
 			url: [
 				'http://localhost:3000',
-				'http://localhost:3000/tos',
 			],
 		},
 		upload: {
