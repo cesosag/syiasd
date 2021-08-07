@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { theme, Wrapper } from 'styles'
-import { SocialLinks } from '../SocialLinks/'
+import { SocialLinks } from 'components/SocialLinks'
 
 const { colors, typography, mediaQueries: { tabletPortraitUp, tabletLandscapeUp }, vars } = theme
 
