@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Image from 'next/image'
 import Link from 'next/link'
 import { texts } from 'services'
 import { SocialLinks } from 'components'
@@ -9,7 +10,7 @@ const Footer = ({ logo, logoText, socialLinks }) => (
 		{logo && (
 			<Link href="/">
 				<a className="logo">
-					<img src={logo} alt={logoText} />
+					<Image src={logo} alt={logoText} width={242} height={57} />
 				</a>
 			</Link>
 		)}

@@ -39,7 +39,7 @@ export const FooterContainer = styled(dynamicElement('footer', true))`
 		margin: 2rem auto;
 	}
 
-	nav[class*=social-links] {
+	nav {
 		color: white;
 		grid-area: social;
 

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { theme, Wrapper } from 'styles'
-import { SocialLinks } from 'components/SocialLinks'
 
 const { colors, typography, mediaQueries: { tabletPortraitUp, tabletLandscapeUp }, vars } = theme
 
@@ -124,10 +123,8 @@ export const Social = styled.div`
 	grid-area: social;
 
 	${tabletPortraitUp} {
-		${SocialLinks} {
-			ul {
-				justify-content: space-evenly;
-			}
+		ul {
+			justify-content: space-evenly;
 		}
 	}
 `
