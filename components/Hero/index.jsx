@@ -5,7 +5,10 @@ import { Container, CTAs, Text, Title } from './hero.styles'
 
 const scrollToVideos = (e) => {
 	e.preventDefault()
-	document.querySelector('#videos').scrollIntoView({ behavior: 'smooth' })
+	const videosElement = document.querySelector('#videos')
+	if (videosElement) {
+		videosElement.scrollIntoView({ behavior: 'smooth' })
+	}
 }
 
 const Hero = ({ title, subtitle, giveURL }) => (

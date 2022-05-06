@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import Image from "next/image";
 import Link from 'next/link'
 import { theme } from 'styles'
 import { Head } from './header.styles'
@@ -34,7 +35,7 @@ const Header = ({ logo, logoMobile, logoText }) => {
 					<a>
 						<picture>
 							<source media={`(min-width: ${phoneUpperBoundary}px)`} srcSet={logo} />
-							<img src={logoMobile} alt={logoText} />
+							<Image src={logoMobile} alt={logoText} width={242} height={57} layout="raw" />
 						</picture>
 					</a>
 				</Link>

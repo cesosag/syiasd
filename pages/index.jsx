@@ -30,12 +30,18 @@ export async function getStaticProps() {
 		query: queries.HOME,
 	})
 
-	const videos = await youtube.get('/playlistItems', {
-		params: {
-			playlistId: siteConfiguration?.youtube?.mainPlaylist,
-			maxResults: 4,
-		},
-	})
+	let videos
+	try {
+		videos = await youtube.get('/playlistItems', {
+			params: {
+				playlistId: siteConfiguration?.youtube?.mainPlaylist,
+				maxResults: 4,
+			},
+		})
+	} catch (err) {
+		// eslint-disable-next-line no-console
+		console.error(`Videos: ${err.message}`)
+	}
 
 	return {
 		props: {
@@ -47,8 +53,8 @@ export async function getStaticProps() {
 					subtitle: hero?.subtitle,
 					giveURL: siteConfiguration.URLs.adventistGiving,
 				},
-				latestVideo: videos.data.items.shift().snippet,
-				videos: videos.data.items.map((video) => video.snippet),
+				latestVideo: videos?.data?.items?.shift().snippet ?? null,
+				videos: videos?.data?.items?.map((video) => video.snippet) ?? null,
 				channelURL: siteConfiguration.URLs.youtube,
 			},
 			give: {
