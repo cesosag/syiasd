@@ -7,7 +7,7 @@ const Welcome = ({ background, hero, videos, latestVideo, channelURL }) => (
 	<Section background={background}>
 		<Wrapper>
 			<Hero {...hero} />
-			<Videos latestVideo={latestVideo} videos={videos} channelURL={channelURL} />
+			{videos && <Videos latestVideo={latestVideo} videos={videos} channelURL={channelURL} />}
 		</Wrapper>
 	</Section>
 )
@@ -15,12 +15,13 @@ const Welcome = ({ background, hero, videos, latestVideo, channelURL }) => (
 Welcome.propTypes = {
 	background: PropTypes.string,
 	hero: PropTypes.shape(Hero?.propTypes).isRequired,
-	latestVideo: PropTypes.shape({}).isRequired,
+	latestVideo: PropTypes.shape({}),
 	videos: PropTypes.arrayOf(PropTypes.shape({})),
 	channelURL: PropTypes.string.isRequired,
 }
 Welcome.defaultProps = {
 	background: null,
+	latestVideo: null,
 	videos: null,
 }
 
