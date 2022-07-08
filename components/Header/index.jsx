@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Image from "next/future/image";
+import Image from 'next/future/image'
 import Link from 'next/link'
 import { theme } from 'styles'
 import { Head } from './header.styles'
