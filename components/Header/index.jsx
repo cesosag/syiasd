@@ -35,7 +35,7 @@ const Header = ({ logo, logoMobile, logoText }) => {
 					<a>
 						<picture>
 							<source media={`(min-width: ${phoneUpperBoundary}px)`} srcSet={logo} />
-							<Image src={logoMobile} alt={logoText} width={242} height={57} layout="raw" />
+							<Image src={logoMobile} alt={logoText} width={242} height={57} />
 						</picture>
 					</a>
 				</Link>

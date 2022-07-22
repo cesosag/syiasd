@@ -8,7 +8,6 @@ module.exports = {
 	experimental: {
 		images: {
 			allowFutureImage: true,
-			layoutRaw: true,
 		},
 	},
 };
